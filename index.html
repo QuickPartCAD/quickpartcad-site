@@ -129,6 +129,14 @@
     .saved-note{font-size:13px;color:var(--accent2);font-weight:700;min-height:20px;margin-top:10px}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
+    /* Internal link hub for AI/search-targeted problem pages */
+    .problem-hub{background:var(--soft);border-top:1px solid #d7ebe7;border-bottom:1px solid #d7ebe7}
+    .problem-hub .lead{font-size:18px;max-width:760px;margin-bottom:26px}
+    .problem-card{display:block;color:var(--text);text-decoration:none;transition:transform .15s ease,border-color .15s ease}
+    .problem-card:hover{border-color:#9fcfc2;transform:translateY(-1px)}
+    .problem-card h3{color:var(--accent2)}
+    .problem-card p{color:var(--muted);margin:0}
+
     @media (max-width:800px){
       .hero-grid,.grid3,.grid2,.builder-layout{grid-template-columns:1fr}
       .builder-preview{border-left:0;border-top:1px solid var(--line)}
@@ -451,6 +459,23 @@
       </div>
     </div>
   </section>
+
+  <section class="problem-hub" id="cad-help" aria-labelledby="cad-help-title">
+    <div class="wrap">
+      <div class="tag">Common CAD problems we solve</div>
+      <h2 id="cad-help-title">Start with the problem you have</h2>
+      <p class="lead">Need a file changed, a replacement part recreated, or a printable bracket or enclosure designed? These pages show what to send and what QuickPartCAD can return.</p>
+      <div class="grid3">
+        <a class="card problem-card" href="stl-step-modification-service.html"><h3>Modify an STL / STEP file →</h3><p>Holes, dimensions, walls, clearances, splits and straightforward geometry changes.</p></a>
+        <a class="card problem-card" href="replacement-part-from-photo.html"><h3>Replacement part from a photo →</h3><p>Recreate a functional part from photos plus the key measurements needed for fit.</p></a>
+        <a class="card problem-card" href="cad-design-for-3d-printing.html"><h3>CAD design for 3D printing →</h3><p>Turn a sketch, dimensions or rough idea into practical CAD for FDM printing.</p></a>
+        <a class="card problem-card" href="custom-enclosure-for-fdm-printing.html"><h3>Custom FDM enclosure →</h3><p>Cases with lids, board mounts, connector openings, screw features and cable access.</p></a>
+        <a class="card problem-card" href="bracket-adapter-cad-design.html"><h3>Bracket / adapter CAD →</h3><p>Connect existing interfaces with the required offsets, mounting patterns and clearances.</p></a>
+        <a class="card problem-card" href="cad-support-for-3d-print-shops.html"><h3>CAD support for print shops →</h3><p>You keep the customer and printing; we handle the CAD when a usable model is missing.</p></a>
+      </div>
+    </div>
+  </section>
+
 
   <section class="cta">
     <div class="wrap">
