@@ -137,6 +137,10 @@
     .problem-card h3{color:var(--accent2)}
     .problem-card p{color:var(--muted);margin:0}
 
+    .guide-hub{background:#f7fbfa;border-top:1px solid var(--line)}
+    .guide-hub .lead{font-size:18px;max-width:780px;margin-bottom:26px}
+    .guide-meta{font-size:12px;font-weight:800;color:var(--accent2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+
     @media (max-width:800px){
       .hero-grid,.grid3,.grid2,.builder-layout{grid-template-columns:1fr}
       .builder-preview{border-left:0;border-top:1px solid var(--line)}
@@ -472,6 +476,20 @@
         <a class="card problem-card" href="custom-enclosure-for-fdm-printing.html"><h3>Custom FDM enclosure →</h3><p>Cases with lids, board mounts, connector openings, screw features and cable access.</p></a>
         <a class="card problem-card" href="bracket-adapter-cad-design.html"><h3>Bracket / adapter CAD →</h3><p>Connect existing interfaces with the required offsets, mounting patterns and clearances.</p></a>
         <a class="card problem-card" href="cad-support-for-3d-print-shops.html"><h3>CAD support for print shops →</h3><p>You keep the customer and printing; we handle the CAD when a usable model is missing.</p></a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="guide-hub" id="practical-guides" aria-labelledby="practical-guides-title">
+    <div class="wrap">
+      <div class="tag">Practical CAD guides</div>
+      <h2 id="practical-guides-title">Useful source material, not generic CAD articles</h2>
+      <p class="lead">These guides document the actual QuickPartCAD scoping methods we use for small functional 3D-printing jobs: what makes us rebuild an STL, which measurements matter first, and how print shops can hand off CAD work cleanly.</p>
+      <div class="grid3">
+        <a class="card problem-card" href="stl-edit-vs-cad-rebuild-guide.html"><div class="guide-meta">Decision method</div><h3>STL edit vs CAD rebuild →</h3><p>Our decision table and five triggers for rebuilding simple mechanical geometry as clean CAD.</p></a>
+        <a class="card problem-card" href="replacement-part-photo-measurement-guide.html"><div class="guide-meta">Measurement checklist</div><h3>Photograph & measure a replacement part →</h3><p>The photo views and fit-critical dimensions we prioritize before recreating a broken or missing part.</p></a>
+        <a class="card problem-card" href="cad-handoff-checklist-for-3d-print-shops.html"><div class="guide-meta">Shop workflow</div><h3>CAD handoff checklist for print shops →</h3><p>An eight-field brief and reusable copy/paste template for outsourcing only the CAD portion of a customer job.</p></a>
       </div>
     </div>
   </section>
