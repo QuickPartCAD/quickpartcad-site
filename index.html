@@ -5,18 +5,18 @@
   <link rel="sitemap" type="application/xml" href="https://quickpartcad.github.io/quickpartcad-site/sitemap.xml">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>QuickPartCAD — CAD Design for 3D Printing | STL, STEP, Replacement Parts & Enclosures</title>
-  <meta name="description" content="Functional CAD design for 3D printing with a guided simple-part builder. Start from sketches, photos, dimensions, STL or STEP files. Replacement parts, brackets, adapters, enclosures and mounts.">
+  <title>QuickPartCAD — CAD for 3D Printing | STL/STEP Edits & Replacement Parts</title>
+  <meta name="description" content="QuickPartCAD provides functional CAD for 3D printing: STL/STEP edits, replacement parts from photos, brackets, adapters and enclosures. Simple CAD edits from $20; first small revision included.">
   <meta name="keywords" content="CAD for 3D printing, STL modification, STEP modification, replacement part CAD, enclosure CAD, bracket CAD, adapter CAD, FDM design">
-  <meta property="og:title" content="QuickPartCAD — Functional CAD for 3D Printing">
-  <meta property="og:description" content="From sketch, photo or dimensions to editable CAD, STEP, STL and 3MF. Functional parts, enclosures, brackets, adapters and simple mechanisms.">
+  <meta property="og:title" content="QuickPartCAD — CAD for 3D Printing | STL/STEP Edits & Replacement Parts">
+  <meta property="og:description" content="Functional CAD for 3D printing from photos, sketches, dimensions, STL or STEP. Simple edits from $20; first small revision included.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quickpartcad.github.io/quickpartcad-site/">
   <meta property="og:site_name" content="QuickPartCAD">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="QuickPartCAD — Functional CAD for 3D Printing">
-  <meta name="twitter:description" content="Guided functional CAD for replacement parts, brackets, adapters, enclosures, mounts and simple mechanisms.">
+  <meta name="twitter:title" content="QuickPartCAD — CAD for 3D Printing | STL/STEP Edits & Replacement Parts">
+  <meta name="twitter:description" content="Functional CAD for 3D printing: STL/STEP edits, replacement parts, brackets, adapters and enclosures.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,7 +33,57 @@
       "STEP modification",
       "Replacement part CAD",
       "3D printable enclosure design",
-      "Bracket and adapter CAD design"
+      "Bracket and adapter CAD design",
+      "CAD support for 3D print shops"
+    ],
+    "priceRange": "Simple CAD edits from $20"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you modify an existing STL or STEP file?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. Typical jobs include changing dimensions, holes, walls, clearances, mounting features, splits and other straightforward functional geometry. If an STL is too coarse or the requested change needs clean parametric geometry, QuickPartCAD may rebuild the part instead of forcing a mesh edit."}
+      },
+      {
+        "@type": "Question",
+        "name": "Can you make a 3D-printable replacement part from photos?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes, when the fit-critical geometry can be measured. Several clear photos plus key dimensions are enough for many brackets, covers, spacers, clips, holders and similar functional parts."}
+      },
+      {
+        "@type": "Question",
+        "name": "What dimensions do I need to send?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Start with the dimensions that control fit: hole diameters and spacing, mating sizes, overall envelope, thickness, offsets, clearances and any surface that must align with another part. QuickPartCAD will ask for missing critical dimensions if needed."}
+      },
+      {
+        "@type": "Question",
+        "name": "What files can you deliver?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Depending on the job, deliverables can include STEP, STL, 3MF and editable CAD."}
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a simple CAD modification cost?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Simple CAD edits can start from $20. The actual quote depends on the source file, geometry, missing information and whether a clean rebuild is needed."}
+      },
+      {
+        "@type": "Question",
+        "name": "Is the first revision included?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. The first small revision within the agreed scope is included. New features, major geometry changes or new requirements are quoted separately."}
+      },
+      {
+        "@type": "Question",
+        "name": "Can a 3D print shop outsource only the CAD to you?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. The print shop can keep the customer relationship, quoting and printing while QuickPartCAD handles the CAD portion per job. There is no retainer or subscription."}
+      },
+      {
+        "@type": "Question",
+        "name": "What types of work are not a good fit for QuickPartCAD?",
+        "acceptedAnswer": {"@type": "Answer", "text": "QuickPartCAD focuses on practical functional parts for 3D printing. It is not positioned for formal FEA, complex injection-molding engineering, artistic sculpting or large multidisciplinary engineering projects."}
+      }
     ]
   }
   </script>
@@ -129,6 +179,16 @@
     .saved-note{font-size:13px;color:var(--accent2);font-weight:700;min-height:20px;margin-top:10px}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
+    .faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+    .faq-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 18px;box-shadow:0 5px 18px rgba(25,40,65,.04)}
+    .faq-item summary{cursor:pointer;font-weight:800;padding:17px 28px 17px 0;list-style:none;position:relative}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:"+";position:absolute;right:0;top:14px;color:var(--accent);font-size:22px;line-height:1}
+    .faq-item[open] summary::after{content:"–"}
+    .faq-item p{color:var(--muted);padding:0 0 17px;margin:0}
+    .faq-item a{color:var(--accent2);font-weight:700}
+    @media(max-width:760px){.faq-list{grid-template-columns:1fr}}
+
     /* Internal link hub for AI/search-targeted problem pages */
     .problem-hub{background:var(--soft);border-top:1px solid #d7ebe7;border-bottom:1px solid #d7ebe7}
     .problem-hub .lead{font-size:18px;max-width:760px;margin-bottom:26px}
@@ -165,7 +225,7 @@
       <div>
         <div class="tag">Functional CAD for 3D Printing</div>
         <h1>From sketch, photo or dimensions to print-ready CAD.</h1>
-        <p class="lead">Practical parametric CAD for replacement parts, brackets, adapters, holders, enclosures, mounts and simple mechanisms.</p>
+        <p class="lead">QuickPartCAD is a small functional CAD service for 3D printing — replacement parts, brackets, adapters, holders, enclosures, mounts, simple mechanisms and practical STL/STEP changes.</p>
         <p class="lead">Deliverables can include editable CAD, STEP, STL and 3MF files.</p>
         <div class="hero-actions">
           <a class="btn" href="#part-builder">Build a simple part</a>
@@ -173,11 +233,11 @@
         </div>
       </div>
       <div class="hero-card">
-        <div class="muted">Simple CAD edits</div>
+        <div class="muted">Launch offer · Simple CAD edits</div>
         <div class="price">from $20</div>
-        <p>Small STL/STEP changes and simple functional parts can start from $20. More complex work is quoted before starting.</p>
+        <p>Small STL/STEP changes and simple functional CAD jobs can start from $20. <strong>First small revision within the agreed scope is included.</strong></p>
         <p><strong>No subscription. Pay per job.</strong></p>
-        <p class="small">Best fit: functional FDM parts with clear dimensions, references or an existing part to work from.</p>
+        <p class="small">A small revision means one minor adjustment to the agreed job after first delivery. New features, major geometry changes or new requirements are quoted separately.</p>
       </div>
     </div>
   </section>
@@ -400,18 +460,21 @@
 
   <section class="band">
     <div class="wrap">
-      <h2>For 3D printing businesses</h2>
+      <h2>Overflow CAD support for 3D print shops</h2>
       <div class="grid2">
         <div class="card">
-          <h3>You keep the customer and the printing.</h3>
-          <p class="muted">If a customer arrives with a sketch, photo, dimensions or a broken part but no usable CAD file, send the CAD work to QuickPartCAD.</p>
+          <h3>You keep the customer and printing; we handle the CAD.</h3>
+          <p class="muted">Keep QuickPartCAD as your overflow CAD contact. If a customer arrives with a sketch, photo, dimensions or a broken part but no usable CAD file, send us only the CAD portion of the job.</p>
         </div>
         <div class="card">
-          <h3>External CAD support only when needed.</h3>
-          <p class="muted">No employee, no retainer and no subscription. Use the service per job and keep your own customer relationship and pricing.</p>
+          <h3>Use us only when a CAD request appears.</h3>
+          <p class="muted">No employee, retainer or subscription. You keep the customer relationship, quoting and printing; we work per job behind the scenes.</p>
         </div>
       </div>
-      <p style="margin-top:24px"><a class="btn" href="mailto:quickpartcad@gmail.com?subject=Print%20shop%20CAD%20request">Send a customer CAD request</a></p>
+      <div class="hero-actions" style="margin-top:24px">
+        <a class="btn" href="mailto:quickpartcad@gmail.com?subject=Print%20shop%20CAD%20request">Send a customer CAD request</a>
+        <a class="btn secondary" href="cad-handoff-checklist-for-3d-print-shops.html">Open the CAD handoff checklist</a>
+      </div>
     </div>
   </section>
 
@@ -440,26 +503,44 @@
   </section>
 
 
-  <section>
+  <section id="faq">
     <div class="wrap">
-      <h2>Common CAD requests</h2>
-      <div class="grid2">
-        <div class="card">
-          <h3>Can you make a 3D-printable replacement part from a photo?</h3>
-          <p>Yes, when the part can be measured or its key dimensions can be provided. Photos, sketches and reference measurements are enough for many functional parts.</p>
-        </div>
-        <div class="card">
-          <h3>Can you modify an existing STL or STEP file?</h3>
-          <p>Yes. Typical changes include resizing, adding or moving holes, splitting parts, changing mounting features and adjusting fit or clearance.</p>
-        </div>
-        <div class="card">
-          <h3>Can you design an enclosure for FDM printing?</h3>
-          <p>Yes. We can design small functional enclosures with lids, screw closures, mounting features and practical FDM clearances.</p>
-        </div>
-        <div class="card">
-          <h3>What files can you deliver?</h3>
-          <p>Depending on the job, deliverables can include editable CAD, STEP, STL and 3MF files.</p>
-        </div>
+      <div class="tag">QuickPartCAD FAQ</div>
+      <h2>Frequently asked questions about the service</h2>
+      <p class="lead" style="font-size:18px">Short answers about source files, measurements, deliverables, pricing, revisions and print-shop handoffs.</p>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Can you modify an existing STL or STEP file?</summary>
+          <p>Yes. Typical jobs include changing dimensions, holes, walls, clearances, mounting features, splits and other straightforward functional geometry. If an STL is too coarse or the change needs clean parametric geometry, we may rebuild the part instead of forcing a mesh edit. <a href="stl-edit-vs-cad-rebuild-guide.html">See how we decide.</a></p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you make a 3D-printable replacement part from photos?</summary>
+          <p>Yes, when the fit-critical geometry can be measured. Several clear photos plus key dimensions are enough for many brackets, covers, spacers, clips, holders and similar functional parts. <a href="replacement-part-photo-measurement-guide.html">See the photo and measurement guide.</a></p>
+        </details>
+        <details class="faq-item">
+          <summary>What dimensions do I need to send?</summary>
+          <p>Start with the dimensions that control fit: hole diameters and spacing, mating sizes, overall envelope, thickness, offsets, clearances and any surface that must align with another part. If a critical dimension is missing, we will ask for it before the geometry is finalized.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What files can you deliver?</summary>
+          <p>Depending on the job, deliverables can include STEP, STL, 3MF and editable CAD. Tell us what your printer, slicer, shop workflow or downstream CAD process needs.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How much does a simple CAD modification cost?</summary>
+          <p>Simple CAD edits can start from <strong>$20</strong>. The actual quote depends on the source file, geometry, missing information and whether a clean rebuild is needed. Scope, price and turnaround are confirmed before work starts.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is the first revision included?</summary>
+          <p>Yes. <strong>The first small revision within the agreed scope is included.</strong> That means one minor adjustment after the first delivery. New features, major geometry changes or new requirements are quoted separately.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can a 3D print shop outsource only the CAD to you?</summary>
+          <p>Yes. You keep the customer, quoting and printing; we handle the CAD portion per job. There is no retainer or subscription. <a href="cad-handoff-checklist-for-3d-print-shops.html">Use our short CAD handoff checklist.</a></p>
+        </details>
+        <details class="faq-item">
+          <summary>What types of work are not a good fit for QuickPartCAD?</summary>
+          <p>We focus on practical functional parts for 3D printing. We are not positioning QuickPartCAD for formal FEA, complex injection-molding engineering, artistic sculpting or large multidisciplinary engineering projects.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -498,7 +579,7 @@
   <section class="cta">
     <div class="wrap">
       <h2>Have a part that needs CAD?</h2>
-      <p>Send a sketch, photo, dimensions or an existing file. We’ll review it first and confirm scope, price and turnaround before starting.</p>
+      <p>Send a sketch, photo, dimensions or an existing file. We’ll review it first and confirm scope, price and turnaround before starting. Simple edits can start from $20, with the first small revision within the agreed scope included.</p>
       <a class="btn" href="mailto:quickpartcad@gmail.com?subject=CAD%20quote%20request">Email QuickPartCAD</a>
       <p class="small" style="margin-top:14px">quickpartcad@gmail.com</p>
     </div>
