@@ -1,0 +1,53 @@
+{
+  "design": "Original parametric CAD: QuickPartCAD Sealed-Style Electronics Enclosure 70x50",
+  "units": "mm",
+  "pcb_envelope": [
+    70,
+    50
+  ],
+  "internal_xy": [
+    88,
+    68
+  ],
+  "base_outside_xy": [
+    94,
+    74
+  ],
+  "base_height": 28,
+  "lid_thickness": 4,
+  "wall": 3,
+  "floor": 3,
+  "gasket_groove_depth": 1.25,
+  "gasket_groove_nominal_width": 1.4,
+  "gasket": "CAD reference only, section/profile not verified for compression",
+  "cable_port_diameter": 12.2,
+  "cable_gland": "not included; actual gland and seal must be specified",
+  "notes": [
+    "Board standoff centers 62x42 mm are an assumed hole pattern, NOT a standard PCB spec.",
+    "Housing is not tested for IP water ingress, print quality or structural loading.",
+    "Four M3-like screw pilots are illustrative; real screw selection and thread engagement unverified.",
+    "Gasket is visual reference geometry; its section is not an approved compression design."
+  ],
+  "Base": {
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 59377.21,
+    "readback_volume_mm3": 59377.21,
+    "relative_volume_delta": 0.0
+  },
+  "Lid": {
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 30350.008,
+    "readback_volume_mm3": 30350.008,
+    "relative_volume_delta": 0.0
+  },
+  "Gasket_Reference": {
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 268.803,
+    "readback_volume_mm3": 268.803,
+    "relative_volume_delta": 0.0
+  },
+  "base_lid_intersection_mm3": 0.0
+}

@@ -102,17 +102,17 @@
     .brand span{color:var(--accent)}
     .btn{display:inline-block;background:var(--accent);color:white;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700}
     .btn:hover{background:var(--accent2)}
-    .hero{padding:78px 0 58px}
+    .hero{padding:38px 0 34px}
     .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center}
-    h1{font-size:54px;line-height:1.05;letter-spacing:-.04em;margin:0 0 20px}
-    h2{font-size:32px;letter-spacing:-.025em;margin:0 0 18px}
+    h1{font-size:clamp(32px,3.2vw,42px);line-height:1.14;letter-spacing:-.04em;margin:0 0 20px}
+    h2{font-size:27px;letter-spacing:-.025em;margin:0 0 18px}
     h3{font-size:21px;margin:0 0 10px}
     p{margin:0 0 16px}
-    .lead{font-size:21px;color:var(--muted);max-width:720px}
+    .lead{font-size:18px;color:var(--muted);max-width:720px}
     .tag{display:inline-block;background:var(--soft);color:var(--accent2);padding:7px 11px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:18px}
     .hero-card,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 26px rgba(25,40,65,.06)}
     .hero-card{padding:26px}
-    .price{font-size:34px;font-weight:800;margin:8px 0}
+    .price{font-size:28px;font-weight:800;margin:8px 0}
     .muted{color:var(--muted)}
     section{padding:58px 0}
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -215,7 +215,7 @@
 <header>
   <div class="wrap nav">
     <div class="brand">QuickPart<span>CAD</span></div>
-    <a class="btn" href="mailto:quickpartcad@gmail.com?subject=CAD%20quote%20request">Get a quote</a>
+    <a class="btn" href="#request">Get a quote</a>
   </div>
 </header>
 
@@ -228,8 +228,8 @@
         <p class="lead">QuickPartCAD is a small functional CAD service for 3D printing — replacement parts, brackets, adapters, holders, enclosures, mounts, simple mechanisms and practical STL/STEP changes.</p>
         <p class="lead">Deliverables can include editable CAD, STEP, STL and 3MF files.</p>
         <div class="hero-actions">
-          <a class="btn" href="#part-builder">Build a simple part</a>
-          <a class="btn secondary" href="mailto:quickpartcad@gmail.com?subject=CAD%20quote%20request&body=Please%20attach%20your%20photo%2C%20sketch%20or%20existing%20file%20and%20include%20the%20key%20dimensions%20and%20what%20the%20part%20needs%20to%20do.">Send a custom request</a>
+          <a class="btn" href="#request">Request a custom CAD part</a>
+          <a class="btn secondary" href="#request">Send a custom request</a>
         </div>
       </div>
       <div class="hero-card">
@@ -243,10 +243,10 @@
   </section>
 
 
-  <section id="part-builder">
+  <section id="part-builder" hidden aria-hidden="true">
     <div class="wrap">
       <div class="tag">Guided Part Builder</div>
-      <h2>Build a simple part with guidance.</h2>
+      <h2>Describe your part — we handle the CAD.</h2>
       <p class="lead" style="font-size:18px">Answer a few practical questions and watch the part take shape. If anything becomes unclear, stop at any step and leave it to us — we’ll continue from your current progress, with your answers preserved.</p>
 
       <div class="builder-shell" style="margin-top:26px">
@@ -445,6 +445,70 @@
     </div>
   </section>
 
+
+<section id="request" aria-labelledby="request-title">
+ <div class="wrap"><div class="tag">Get a quote · no CAD skills required</div>
+ <h2 id="request-title">Tell us what part you need.</h2>
+ <p class="lead" style="font-size:18px">Send a sketch, photo, STL or STEP. We review the fit-critical dimensions, agree on scope and price, then design your part. No commitment until we confirm the quote.</p>
+ <div class="card" style="max-width:780px;margin-top:20px;padding:26px">
+ <form id="qpcDirectRequest" action="https://formsubmit.co/quickpartcad@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="QuickPartCAD | New CAD quote request">
+  <input type="hidden" name="_template" value="table">
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+   <label>Your name (optional)<input name="name" autocomplete="name" maxlength="160" placeholder="Name" style="display:block;width:100%;padding:12px;border:1px solid #c9d5df;border-radius:8px;margin-top:5px"></label>
+   <label>Your email *<input required type="email" name="email" autocomplete="email" maxlength="254" placeholder="you@example.com" style="display:block;width:100%;padding:12px;border:1px solid #c9d5df;border-radius:8px;margin-top:5px"></label>
+  </div>
+  <label style="display:block;margin-top:16px">What do you need? *<textarea required name="project_description" rows="5" minlength="12" placeholder="What is the part for? Dimensions, holes, fit, material, quantities, deadline… If unsure, describe the problem." style="display:block;width:100%;padding:12px;border:1px solid #c9d5df;border-radius:8px;margin-top:5px;resize:vertical"></textarea></label>
+  <label style="display:block;margin-top:16px">Reference file (optional: JPG, PNG, PDF, STL, STEP, STP, 3MF, OBJ)<input type="file" id="qpcAttachment" name="attachment" accept=".jpg,.jpeg,.png,.pdf,.stl,.step,.stp,.3mf,.obj" style="display:block;margin-top:8px;width:100%"></label>
+  <p class="small">One file, maximum 10 MB. The form may show a spam verification screen. For multiple files, send a ZIP by email after initial contact.</p>
+  <p class="small" style="margin-top:14px">Your email and submitted project details are sent through FormSubmit to QuickPartCAD only to answer your inquiry. Please do not upload confidential designs or personal information unless you are comfortable using this service.</p>
+  <p id="qpcFormError" role="alert" style="color:#9b1c1c"></p>
+  <button type="submit" class="btn" style="border:0;cursor:pointer;font-size:17px;margin-top:10px">Send CAD quote request</button>
+  <p class="small" style="margin-top:14px">Alternatively, email us at <a href="mailto:quickpartcad@gmail.com">quickpartcad@gmail.com</a> if your email app is configured.</p>
+ </form>
+ </div></div>
+</section>
+<script>
+document.getElementById('qpcDirectRequest').addEventListener('submit',function(e){
+ if(location.protocol==='file:'){ e.preventDefault();document.getElementById('qpcFormError').textContent='This local preview cannot send requests. The form works only on the published HTTPS website.';return;}
+ const f=document.getElementById('qpcAttachment').files[0];
+ const msg=document.getElementById('qpcFormError');msg.textContent='';
+ if(f && (f.size>10*1024*1024 || !/\.(jpg|jpeg|png|pdf|stl|step|stp|3mf|obj)$/i.test(f.name))){ e.preventDefault();msg.textContent='Choose one supported file smaller than 10 MB.'; }
+});
+</script>
+
+  <section id="portfolio" aria-labelledby="portfolio-enclosure-heading">
+    <div class="wrap">
+      <div class="tag">CAD project · downloadable STEP</div>
+      <h2 id="portfolio-enclosure-heading">Sealable electronics enclosure — 70 × 50 mm PCB</h2>
+      <p class="lead" style="font-size:18px">Original CAD concept of a two-part electronics enclosure with a screw-on lid, a perimeter gasket groove, internal PCB supports and a cable-entry opening.</p>
+      <div class="grid2 project">
+        <div class="card">
+          <img src="portfolio/sealable-enclosure-70x50/QPC_Sealable_PREVIEW.png" alt="Original QuickPartCAD engineering CAD assembly, exploded base and lid with reference gasket" loading="lazy" style="width:100%;height:auto">
+          <p class="small" style="margin-top:12px">Screenshot of the actual imported STEP model in Onshape, not an AI-generated illustration. STEP files below contain actual editable B-rep solid geometry (not an image); imported STEP does not preserve the original feature history.</p>
+        </div>
+        <div class="card">
+          <h3>What was designed</h3>
+          <ul>
+            <li>PCB envelope 70 × 50 mm; four mounting posts (assumed 62 × 42 mm pattern)</li>
+            <li>94 × 74 × 28 mm base with 3 mm walls and floor</li>
+            <li>4 mm lid, gasket groove and four screw-mounting points</li>
+            <li>Cable-entry opening and reference gasket solid</li>
+          </ul>
+          <p style="margin-top:18px"><strong>Inspect actual CAD geometry</strong></p>
+          <p><a class="btn" href="https://cad.onshape.com/documents/db6db3bec07bec6ac94da8f3/w/9c36463aca07f6b557381289/e/5dcc1addb0e8dc03335a0834" target="_blank" rel="noopener noreferrer">View interactive 3D in Onshape ↗</a></p>
+          <div class="hero-actions" style="margin-top:10px">
+            <a class="btn" href="portfolio/sealable-enclosure-70x50/QPC_Sealable_Exploded.step" download>Download exploded STEP</a>
+            <a class="btn secondary" href="portfolio/sealable-enclosure-70x50/QPC_Sealable_Assembly.step" download>Download assembly STEP</a>
+          </div>
+          <p class="small" style="margin-top:14px">The STEP files can be opened and rotated in Onshape, FreeCAD or other STEP-compatible CAD software. Base and lid are also available individually in STEP and STL.</p>
+          <p class="small"><strong>Status:</strong> CAD prototype; geometrical checks only. Gasket material, screws, cable gland, FDM process and water ingress have not been validated. No IP rating claimed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="wrap grid2 project">
       <div>
@@ -472,7 +536,7 @@
         </div>
       </div>
       <div class="hero-actions" style="margin-top:24px">
-        <a class="btn" href="mailto:quickpartcad@gmail.com?subject=Print%20shop%20CAD%20request">Send a customer CAD request</a>
+        <a class="btn" href="#request">Send a customer CAD request</a>
         <a class="btn secondary" href="cad-handoff-checklist-for-3d-print-shops.html">Open the CAD handoff checklist</a>
       </div>
     </div>
@@ -580,7 +644,7 @@
     <div class="wrap">
       <h2>Have a part that needs CAD?</h2>
       <p>Send a sketch, photo, dimensions or an existing file. We’ll review it first and confirm scope, price and turnaround before starting. Simple edits can start from $20, with the first small revision within the agreed scope included.</p>
-      <a class="btn" href="mailto:quickpartcad@gmail.com?subject=CAD%20quote%20request">Email QuickPartCAD</a>
+      <a class="btn" href="#request">Email QuickPartCAD</a>
       <p class="small" style="margin-top:14px">quickpartcad@gmail.com</p>
     </div>
   </section>
@@ -590,7 +654,7 @@
   <div class="wrap">© QuickPartCAD — Functional CAD for 3D printing. QuickPartCAD is a small independent CAD service focused on practical 3D-printing projects.</div>
 </footer>
 
-<button class="floating-help" type="button" onclick="openHandoff()">Need help? Leave it to us — we’ll take it from here</button>
+<button class="floating-help" type="button" onclick="location.hash='request'; document.getElementById('request').scrollIntoView({behavior:'smooth'})">Have a part idea? Send us your files</button>
 
 <div id="handoffModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="handoffTitle">
   <div class="modal">
@@ -612,7 +676,7 @@
       <button class="mini-btn" type="button" onclick="closeHandoff()">Keep editing</button>
       <div class="right">
         <button class="mini-btn" type="button" onclick="copySummary(true)">Copy summary</button>
-        <button class="mini-btn primary" type="button" onclick="emailProject()">Open email with this project</button>
+        <button class="mini-btn primary" type="button" onclick="emailProject()">Copy project summary</button>
       </div>
     </div>
   </div>
