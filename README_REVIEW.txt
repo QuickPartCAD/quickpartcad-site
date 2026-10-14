@@ -1,0 +1,2 @@
+LOCAL REVIEW BUILD — NOT PUBLISHED
+Base: SINGLE_CTA compact/form/CAD project. Restored: 8 FAQ, print-shop block, service and guide links, structured data. Included all 9 linked HTML pages and CAD assets. Removed mailto destinations on all included pages. Preserve other files already in GitHub repo when publishing. FormSubmit receipt must be tested on HTTPS after publication. Physical enclosure testing has not been performed.
